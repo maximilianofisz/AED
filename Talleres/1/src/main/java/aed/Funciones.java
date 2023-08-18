@@ -2,63 +2,112 @@ package aed;
 
 class Funciones {
     int cuadrado(int x) {
-        // COMPLETAR
-        return 0;
+        return x*x;
     }
 
     double distancia(double x, double y) {
-        // COMPLETAR
-        return 0.0;
+        return Math.sqrt(x*x + y*y);
     }
 
+    /*boolean esPar(int n) {
+        if(n % 2 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+*/
     boolean esPar(int n) {
-        // COMPLETAR
-        return false;
+        return (n % 2 == 0);
     }
 
     boolean esBisiesto(int n) {
-        // COMPLETAR
-        return false;
+        return (n % 4 == 0 && n % 100 != 0) || n % 400 == 0;
     }
 
     int factorialIterativo(int n) {
-        // COMPLETAR
-        return 0;
+        int sum = 1;
+        while(n > 0) {
+            sum = sum * n;
+            n = n -1;
+        }
+        return sum;
     }
 
     int factorialRecursivo(int n) {
-        // COMPLETAR
-        return 0;
+        if(n==0) {
+            return 1;
+        }
+        else {
+            return n * factorialRecursivo(n-1);
+        }
+        
     }
 
     boolean esPrimo(int n) {
-        // COMPLETAR
-        return false;
+        if(n == 0 || n == 1) {
+            return false;
+        }
+        int index = n - 1;
+        while(index > 1) {
+            if(n % index == 0) {
+                return false;
+            }
+            index = index - 1;
+        }
+        return true;
     }
-
+// [1,2,3] 
     int sumatoria(int[] numeros) {
-        // COMPLETAR
-        return 0;
+        if(numeros.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for(int i = 0; i < numeros.length; i++) {
+            sum = sum + numeros[i];
+        }
+        return sum;
     }
 
     int busqueda(int[] numeros, int buscado) {
-        // COMPLETAR
-        return 0;
+        for(int i = 0; i < numeros.length; i++) {
+            if(numeros[i] == buscado) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     boolean tienePrimo(int[] numeros) {
-        // COMPLETAR
+        for(int i = 0; i < numeros.length; i++) {
+            if(esPrimo(numeros[i])) {
+                return true;
+            }
+        }
         return false;
     }
 
     boolean todosPares(int[] numeros) {
-        // COMPLETAR
-        return false;
+        for(int i = 0; i < numeros.length; i++) {
+            if(!esPar(numeros[i])) {
+                return false;
+            }
+        }
+        return true;
     }
 
     boolean esPrefijo(String s1, String s2) {
-        // COMPLETAR
-        return false;
+        if(s1.toCharArray().length > s2.toCharArray().length) {
+            return false;
+        }
+
+        for(int i = 0; i < s1.toCharArray().length ; i++) {
+            if(s2.toCharArray()[i] != s1.toCharArray()[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     boolean esSufijo(String s1, String s2) {
