@@ -1,5 +1,6 @@
 package aed;
 
+
 class Funciones {
     int cuadrado(int x) {
         return x*x;
@@ -58,7 +59,7 @@ class Funciones {
         }
         return true;
     }
-// [1,2,3] 
+
     int sumatoria(int[] numeros) {
         if(numeros.length == 0) {
             return 0;
@@ -111,7 +112,30 @@ class Funciones {
     }
 
     boolean esSufijo(String s1, String s2) {
-        // COMPLETAR
-        return false;
+        char[] firstWord = s1.toCharArray();
+        char[] secondWord = s2.toCharArray(); 
+        for(int i = 0; i < firstWord.length / 2; i++) {
+            char tempLetter = firstWord[i];
+            firstWord[i] = firstWord[firstWord.length-1-i];
+            firstWord[firstWord.length-1-i] = tempLetter;
+
+        }
+
+        for(int i = 0; i < secondWord.length / 2; i++) {
+            char tempLetter = secondWord[i];
+            secondWord[i] = secondWord[secondWord.length-1-i];
+            secondWord[secondWord.length-1-i] = tempLetter;
+
+        }
+        String reversedFirstWord = new String(firstWord); 
+        String reversedSecondWord = new String(secondWord);  
+
+        if(esPrefijo(reversedFirstWord, reversedSecondWord)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 }
