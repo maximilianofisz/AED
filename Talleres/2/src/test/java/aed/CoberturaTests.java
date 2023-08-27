@@ -22,11 +22,14 @@ class CoberturaTests {
     void testNumeroCombinatorio() {
         assertEquals(1, cobertura.numeroCombinatorio(1,1));
         assertEquals(4, cobertura.numeroCombinatorio(4,3));
-         assertEquals(1, cobertura.numeroCombinatorio(2,2));
+        assertEquals(1, cobertura.numeroCombinatorio(2,2));
     }
 
     @Test
     void testRepeticionesConsecutivas() {
-        assertTrue(false);
+        assertEquals(3, cobertura.repeticionesConsecutivas(new int[]{1,1,1}));
+        assertEquals(0, cobertura.repeticionesConsecutivas(new int[]{}));
+        assertEquals(4, cobertura.repeticionesConsecutivas(new int[]{1,1,1,2,2,2,2}));
+        assertEquals(1, cobertura.repeticionesConsecutivas(new int[]{1,2,3}));
     }
 }
