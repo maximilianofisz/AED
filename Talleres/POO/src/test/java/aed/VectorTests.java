@@ -24,10 +24,7 @@ class VectorTests {
         vector.agregarAtras(90);
 
         assertEquals(5, vector.longitud());
-        for (int numero : vector.elementos) {
-            System.out.println("numero");
-            System.out.println(numero);
-        }
+
         assertEquals(0, vector.obtener(0));
         assertEquals(5, vector.obtener(1));
         assertEquals(98, vector.obtener(2));

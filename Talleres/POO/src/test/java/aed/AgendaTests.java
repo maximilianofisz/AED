@@ -156,6 +156,7 @@ public class AgendaTests {
         a.agregarRecordatorio(new Recordatorio("Clase Algoritmos", new Fecha(10, 05), new Horario(17, 00)));
         a.agregarRecordatorio(new Recordatorio("Labo Algoritmos", new Fecha(10, 05), new Horario(19, 00)));
 
+
         String esperado = "10/5\n"
                 .concat("=====\n")
                 .concat("Clase Algoritmos @ 10/5 17:0\n")

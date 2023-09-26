@@ -9,7 +9,10 @@ class VectorDeInts implements SecuenciaDeInts {
     }
 
     public VectorDeInts(VectorDeInts vector) {
-        throw new UnsupportedOperationException("No implementada aun");
+        elementos = new int[vector.elementos.length];
+        for(int i = 0; i < elementos.length; i++) {
+            elementos[i] = vector.elementos[i];
+        }
     }
 
     public int longitud() {
@@ -18,8 +21,8 @@ class VectorDeInts implements SecuenciaDeInts {
 
     public void agregarAtras(int i) {
         int[] elementosModificado = new int[elementos.length + 1];
-        for (int j : elementos) {
-            elementosModificado[j] = elementos[j]
+        for (int j = 0; j < elementos.length; j++) {
+            elementosModificado[j] = elementos[j];
         }
         elementosModificado[elementosModificado.length - 1] = i;
         elementos = elementosModificado;
@@ -30,15 +33,24 @@ class VectorDeInts implements SecuenciaDeInts {
     }
 
     public void quitarAtras() {
-        throw new UnsupportedOperationException("No implementada aun");
+        int[] elementosModificado = new int[elementos.length - 1];
+        for (int j = 0; j < elementos.length - 1; j++) {
+            elementosModificado[j] = elementos[j];
+        }
+        elementos = elementosModificado;
     }
 
     public void modificarPosicion(int indice, int valor) {
-        throw new UnsupportedOperationException("No implementada aun");
+        elementos[indice] = valor;
     }
 
     public VectorDeInts copiar() {
-        throw new UnsupportedOperationException("No implementada aun");
+        VectorDeInts nuevoVector = new VectorDeInts();
+        nuevoVector.elementos = new int[elementos.length];
+        for(int i = 0; i < elementos.length; i++) {
+            nuevoVector.elementos[i] = elementos[i];
+        }
+        return nuevoVector;
     }
 
 }
