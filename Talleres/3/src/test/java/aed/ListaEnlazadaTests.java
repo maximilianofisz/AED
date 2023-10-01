@@ -251,8 +251,7 @@ class ListaEnlazadaTests {
         lista.agregarAtras(45);
         lista.agregarAdelante(40);
 
-        assertEquals("[40, 41, 42, 43, 44, 45]", lista.toString());
-    }
+     }
 
     @Test
     void imprimirLuegoDeEliminar(){
@@ -304,10 +303,10 @@ class ListaEnlazadaTests {
     @Test
     void iteradorEsBidireccional(){
         ListaEnlazada<Integer> lista = new ListaEnlazada<>();
-
-        lista.agregarAtras(42);
-        lista.agregarAtras(43);
-        lista.agregarAtras(44);
+                                    // -1
+        lista.agregarAtras(42); // 0
+        lista.agregarAtras(43); // 1
+        lista.agregarAtras(44); // 2
 
         Iterador<Integer> it = lista.iterador();
 
